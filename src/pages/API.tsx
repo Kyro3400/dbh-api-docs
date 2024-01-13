@@ -8,7 +8,7 @@ export default function ExamplePage(): JSX.Element {
     React.useEffect( () => {
         fetch(
             // TODO Your link here
-            "https://bots-api.danbot.host/",
+            "https://bot-api.danbot.host/",
             {
                 headers: {
                     'Accept': 'application/json',
