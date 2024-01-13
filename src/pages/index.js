@@ -34,6 +34,8 @@ export default function Home() {
     <Layout
       title={`Welcome to ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="theme-color" content="#00000" />
       <HomepageHeader />
       <main>
         <HomepageFeatures />
