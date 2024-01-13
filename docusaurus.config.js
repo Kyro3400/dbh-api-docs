@@ -13,15 +13,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'http://pnode2.danbot.host:7068',
+  url: 'https://bot-api.only-fans.club',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'kyro3400', // Usually your GitHub org/user name.
+  projectName: 'dbh-api-docs', // Usually your repo name.
     
   plugins: ["docusaurus-plugin-sass"],
   themes: ["docusaurus-json-schema-plugin"],
@@ -46,12 +46,14 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/kyro3400/dbh-api-docs/tree/main/packages/create-docusaurus/templates/shared/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/kyro3400/dbh-api-docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
