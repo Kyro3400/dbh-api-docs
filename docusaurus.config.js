@@ -66,6 +66,18 @@ const config = {
         defaultMode: "dark",
         disableSwitch: true,
         },
+        plugins: [
+    [
+      'content-blog',
+      {
+        path: 'blog',
+        routeBasePath: 'blog',
+        include: ['*.md', '*.mdx'],
+        // ...
+      },
+    ],
+    'content-pages',
+  ],
       navbar: {
         title: 'DBH API Docs',
         logo: {
