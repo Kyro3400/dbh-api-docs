@@ -3,7 +3,10 @@ title: JavaScript Example
 ---
 import Playground from '@site/src/components/Playground';
 
-<Playground />
+import python from './python.md';
+import javascript from './javascript.md';
+
+<Playground code={{ python, javascript }} />;
 
 Thank you to <a href="https://discord.com/channels/@me/1193271410907426966">Trung</a> for making this!
 
