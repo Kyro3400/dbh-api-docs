@@ -1,11 +1,13 @@
 ---
 title: JavaScript Example
 ---
+import Playground from '@site/src/components/Playground';
 
+<Playground />
 
 Thank you to <a href="https://discord.com/channels/@me/1193271410907426966">Trung</a> for making this!
 
-```js
+```javascript
 const axios = require("axios");
 
 let api_key = "Replace ur api key here"
