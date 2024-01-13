@@ -45,10 +45,13 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -66,18 +69,6 @@ const config = {
         defaultMode: "dark",
         disableSwitch: true,
         },
-        plugins: [
-    [
-      'content-blog',
-      {
-        path: 'blog',
-        routeBasePath: 'blog',
-        include: ['*.md', '*.mdx'],
-        // ...
-      },
-    ],
-    'content-pages',
-  ],
       navbar: {
         title: 'DBH API Docs',
         logo: {
@@ -91,6 +82,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
           type: 'docsVersionDropdown',
           position: 'right',
@@ -142,6 +134,10 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/DanBot-Hosting/DBH-Bot-API',
