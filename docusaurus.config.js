@@ -24,6 +24,7 @@ const config = {
   projectName: 'docusaurus', // Usually your repo name.
     
   plugins: ["docusaurus-plugin-sass"],
+  themes: ["docusaurus-json-schema-plugin"],
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
