@@ -1,0 +1,18 @@
+name: DBH
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - name: Build
+      run: |
+        cd
+        git init
+        git pull https://github.com/kyro3400/dbh-api-docs.git
+    - name: Install
+      run: |
+        npm i
