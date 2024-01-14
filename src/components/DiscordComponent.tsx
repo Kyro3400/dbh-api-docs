@@ -4,7 +4,7 @@ import {
     DiscordOptionsContext,
     DiscordMessageOptions,
     DiscordMessages,
-} from '@pycord/discord-message-components/packages/react'
+} from '@pycord/discord-message-components-react'
 
 export const defaultOptions: DiscordMessageOptions = {
     ...DiscordDefaultOptions,
