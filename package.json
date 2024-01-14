@@ -16,7 +16,7 @@
   "dependencies": {
     "@docusaurus/core": "3.1.0",
     "@docusaurus/preset-classic": "3.1.0",
-    "discord-message-components": "git://github.com/pycord/discord-message-components.git",
+    "discord-message-components": "git://github.com/Pycord-Development/discord-message-components.git",
     "@iconify/react": "^4.1.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
