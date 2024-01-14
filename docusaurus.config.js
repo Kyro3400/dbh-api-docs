@@ -46,14 +46,14 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           editUrl:
-            'https://github.com/kyro3400/dbh-api-docs/tree/main/docs',
+            'https://github.com/Kyro3400/dbh-api-docs/tree/main/docs',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/kyro3400/dbh-api-docs/tree/main/blog',
+            'https://github.com/Kyro3400/dbh-api-docs/tree/main/blog',
         },
         theme: {
           customCss: './src/css/custom.css',
