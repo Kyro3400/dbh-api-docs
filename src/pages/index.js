@@ -41,5 +41,6 @@ export default function Home() {
         <HomepageFeatures />
       </main>
     </Layout>
+<script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
   );
 }
