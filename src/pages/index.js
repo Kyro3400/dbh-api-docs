@@ -40,7 +40,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+        <script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
     </Layout>
-<script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
   );
 }
