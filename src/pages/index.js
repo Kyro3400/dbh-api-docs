@@ -37,10 +37,10 @@ export default function Home() {
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="theme-color" content="#00000" />
       <HomepageHeader />
+      <script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
       <main>
         <HomepageFeatures />
       </main>
-        <script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
     </Layout>
   );
 }
