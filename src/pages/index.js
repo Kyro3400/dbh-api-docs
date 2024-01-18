@@ -36,12 +36,13 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="theme-color" content="#00000" />
-        <script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
       <HomepageHeader />
-      //<script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
       <main>
         <HomepageFeatures />
       </main>
+      <head>
+      <script async src="https://arc.io/widget.min.js#xUGjbaEu"></script>
+      </head>
     </Layout>
   );
 }
