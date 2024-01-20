@@ -2,13 +2,15 @@
 title: Python Bot Wrapper 
 ---
 
+:::Note
 Thank you to <a href="https://discord.com/channels/@me/915989266943860746">sliden</a> for making this!
+:::
 
 # danbot-hosting - DanBot Hosting Bots API Wrapper
 
 ## Overview
 
-The [`danbot-hosting`](https://github.com/DanBot-Hosting/dbh-bot-wrapper) is a Python module designed to simplify interactions with the DanBot Hosting API for adding Discord bots. It provides a `bot` class with methods for adding bots, retrieving bot information, and obtaining information of all bots.
+The [`danbot-hosting`](https://github.com/DanBot-Hosting/dbh-bots-wrapper) is a Python module designed to simplify interactions with the DanBot Hosting API for adding Discord bots. It provides a `bot` class with methods for adding bots, retrieving bot information, and obtaining information of all bots.
 
 ## Installation
 
