@@ -23,7 +23,7 @@ const config = {
   organizationName: 'kyro3400', // Usually your GitHub org/user name.
   projectName: 'dbh-api-docs', // Usually your repo name.
     
-  plugins: ["docusaurus-plugin-sass", '@docusaurus/plugin-google-gtag',
+  plugins: ["docusaurus-plugin-sass", "@docusaurus/plugin-google-gtag",
       {
         trackingID: 'G-999X9XX9XX',
         anonymizeIP: true,
