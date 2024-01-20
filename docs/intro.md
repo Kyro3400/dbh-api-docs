@@ -8,10 +8,9 @@ Welcome to the official DanBot Hosting Bots API!
 
 This is the server-side project that allows users to add their own bot into our [Community Server](https://discord.gg/dbh)!
 
-> :::note[NOTE]
-> This project is still in a testing stage. It should be good enough for production, but bugs may occur.
-
-
+:::warning[WARNING]
+This project is still in a testing stage. It should be good enough for production, but bugs may occur.
+:::
 ## Documentation
 
 - [Endpoints](#documentation)
@@ -20,8 +19,9 @@ This is the server-side project that allows users to add their own bot into our 
   - [AddBot](#post-addbot)
   - [GetBot](#get-bot)
   - [GetBots](#get-bots)
-  
- ---
+
+
+---
 
 ### `ANY` /
 
@@ -39,9 +39,9 @@ The main index page.
 
 Creates a new API key.
 
-> :::important[IMPORTANT]
-> **All URL params are required.**
-
+:::important[IMPORTANT]
+**All URL params are required.**
+:::
 #### URL Params
 
 - `discordid` [string] - The bot's Discord ID
@@ -63,12 +63,12 @@ Creates a new API key.
 
 Removes an API key. 
 
-> :::danger[CAUTION]
-> **All associated data with the API key will be removed. Be careful removing a key.**
-
-> :::important[IMPORTANT]
-> **All URL params are required.**
-
+:::warning[CAUTION]
+**All associated data with the API key will be removed. Be careful removing a key.**
+:::
+:::important[IMPORTANT]
+**All URL params are required.**
+:::
 #### URL Params
 
 - `discordid` [string] - The bot's Discord ID
@@ -90,17 +90,18 @@ Removes an API key.
 
 Adds a bot to the API/database.
 
-> :::important[IMPORTANT]
-> **All URL params are required.**
-
-> :::note[NOTE]
-> **Needs to be sent from a DBH node.**
+:::important[IMPORTANT]
+**All URL params are required.**
+:::
+:::note[NOTE]
+**Needs to be sent from a DBH node.**
+:::
 
 #### URL Params
 
 - `discordid` [string] - The bot's Discord ID
 - `ownerid` [string] - The owner's Discord ID
-- `apikey` [string] - The admin API key, **only select people have this**.
+- `apikey` [string] - The API key you received from running `/generate-bot-api-key`.
 - `name` [string] - The bot's name
 - `avatar` [string] - The bot's avatar URL
 - `users` [integer] - The bot's user count
@@ -123,14 +124,15 @@ Adds a bot to the API/database.
 
 Get a bot's data.
 
-> :::important[IMPORTANT]
-> **All URL params are required.**
+:::important[IMPORTANT]
+**All URL params are required.**
+:::
 
 #### URL Params
 
 - `discordid` [string] - The bot's Discord ID
 - `userid` [string] - The Discord bot's owner's ID
-- `apikey` [string] - The admin API key, **only select people have this**.
+- `apikey` [string] -The API key you received from running `/generate-bot-api-key`.
 
 #### Responses
 
@@ -148,14 +150,14 @@ Get a bot's data.
 
 Get all bot's data.
 
-> :::important[IMPORTANT]
-> **All URL params are required.**
-
+:::important[IMPORTANT]
+**All URL params are required.**
+:::
 #### URL Params
 
 - `discordid` [string] - The bot's Discord ID
 - `userid` [string] - The Discord bot's owner's ID
-- `apikey` [string] - The admin API key, **only select people have this**.
+- `apikey` [string] - The API key you received from running `/generate-bot-api-key`.
 
 #### Responses
 
@@ -166,5 +168,3 @@ Get all bot's data.
 - `400/403` - Bad request. You're missing a URL param or something else went wrong.
     - Content-Type: `application/json`
     - Body: `{ error: [The error] }`
-
----
