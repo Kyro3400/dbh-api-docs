@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "3.1.0",
-    "@docusaurus/preset-classic": "3.1.0",
+    "@docusaurus/preset-classic": "3.1.1",
     "@pycord/discord-message-components-react": "^0.3.2",
     "@iconify/react": "^4.1.1",
     "@mdx-js/react": "^3.0.0",
