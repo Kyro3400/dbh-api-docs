@@ -1,19 +1,11 @@
 ---
 sidebar_position: 1
 ---
-import React from 'react'
-import {
-	DiscordDefaultOptions,
-	DiscordInteraction,
-	DiscordMarkdown,
-	DiscordMention,
-	DiscordMessage,
-	DiscordMessages,
-	DiscordOptionsContext,
-	DiscordReaction,
-	DiscordReactions,
-} from '@pycord/discord-message-components-react'
-import '@pycord/discord-message-components-react/dist/style.css'
+import Button from '../src/components/Button'; 
+import { DiscordButton, DiscordButtons, DiscordInteraction, DiscordMessage, DiscordMessages, DiscordMention, DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, } from "@pycord/discord-message-components-react"; 
+import "@pycord/discord-message-components-react/dist/style.css"; 
+import DiscordComponent, { defaultOptions } from "../src/components/DiscordComponent";
+
 
 :::note[]
 This was posted about in the [<DiscordMention>#❗╏news</DiscordMention>](https://discord.com/channels/639477525927690240/898050443446464532/1200591997128409178) channel on the discord, but forgot to post about here!
