@@ -25,7 +25,7 @@ We are very sorry about this but it is not under our control, we would love to c
 
 ### Below is what <DiscordMention>Willy</DiscordMention> (one of DBH's many Devs) is the discord post they made:
 
-// Extend the default options in order to provide your own
+
 const discordOptions = {
 	...DiscordDefaultOptions,
 	profiles: {
