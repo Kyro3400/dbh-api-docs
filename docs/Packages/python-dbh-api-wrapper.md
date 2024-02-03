@@ -2,7 +2,7 @@
 title: Python Bot Wrapper 
 ---
 
-:::Note
+:::Note[]
 Thank you to <a href="https://discord.com/channels/@me/915989266943860746">sliden</a> for making this!
 :::
 
