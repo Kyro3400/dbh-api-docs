@@ -19,26 +19,11 @@ We are very sorry about this but it is not under our control, we would love to c
 
 ### Below is what <DiscordMention>Willy</DiscordMention> (one of DBH's many Devs) is the discord post they made
 
-const discordOptions = {
- ...DiscordDefaultOptions,
- profiles: {
-  willy: {
-   author: 'Willy',
-   avatar: '<https://images-ext-2.discordapp.net/external/lG-3qgSvQuJFGMwnA1VK70E0WGYQ2YIEc2UGtDBie1U/https/cdn.discordapp.com/avatars/853158265466257448/35eb8b32381055e896a6a2c6368065dd.png>',
-   roleColor: '#0390F3',
-  },
- },
-}
-
-export default function App() {
- return (
-  <DiscordOptionsContext.Provider value={discordOptions}>
-   <DiscordMessages>
-    <DiscordMessage profile="willy">
-     <DiscordMention>Changelogs</DiscordMention>
-          Well this is an unfortunate announcement. Discord has introduced a limit of 50 bots per server which means we will be discontinuing the bot API for now as DBH will most likely reach the bot limit quickly.\n\nI have kicked most of the bots, and have only kept a few that are used somewhat often or if they were made by a higher ranking staff member.\n\nI will keep everyone updated about any changes to this decision.
-    </DiscordMessage>
-   </DiscordMessages>
-  </DiscordOptionsContext.Provider>
- )
-}
+<DiscordComponent>
+    <div slot="message">
+      <DiscordMessage profile="willy"><DiscordMention>Changelogs</DiscordMention>
+      Well this is an unfortunate announcement. Discord has introduced a limit of 50 bots per server which means we will be discontinuing the bot API for now as DBH will most likely reach the bot limit quickly.\n\nI have kicked most of the bots, and have only kept a few that are used somewhat often or if they were made by a higher ranking staff member.\n\nI will keep everyone updated about any changes to this decision.
+      </DiscordMessage>
+    </div>
+  </DiscordMessage>
+</DiscordComponent>
