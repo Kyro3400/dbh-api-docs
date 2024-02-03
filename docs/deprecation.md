@@ -24,6 +24,6 @@ We are very sorry about this but it is not under our control, we would love to c
       <DiscordMessage profile="willy">
       <DiscordMention>Changelogs</DiscordMention>
       Well this is an unfortunate announcement. Discord has introduced a limit of 50 bots per server which means we will be discontinuing the bot API for now as DBH will most likely reach the bot limit quickly.\n\nI have kicked most of the bots, and have only kept a few that are used somewhat often or if they were made by a higher ranking staff member.\n\nI will keep everyone updated about any changes to this decision.
+      </DiscordMessage>
     </div>
-  </DiscordMessage>
 </DiscordComponent>
