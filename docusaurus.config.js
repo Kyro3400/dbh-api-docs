@@ -56,7 +56,7 @@ const config = {
             'https://github.com/Kyro3400/dbh-api-docs/tree/main/blog',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve("./src/scss/main.scss"),
         },
       }),
     ],
