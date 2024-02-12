@@ -1,0 +1,604 @@
+@use '~@matteusan/sentro' with ($prefix: 'pyc', $context: 'theme');
+@use 'helpers';
+
+@use 'modules/pyc-button';
+@use 'modules/pyc-hero';
+@use 'modules/pyc-icon';
+@use 'modules/pyc-user-card';
+@use 'modules/pyc-title-bar';
+
+@use 'infima/overrides';
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  @include sentro.token-config(
+    $blurple: (
+      'light': #ff8c7d,
+      'default': #FB6855,
+      'dark': #ff3c23,
+      'ink': #fff
+    ),
+    $surface: (
+      'light': #33373a,
+      'default': #23272a,
+      'dark': #17181a,
+      'ink': #fff
+    ),
+    $error: (
+      'default': #d93333,
+      'ink': #fff
+    ),
+    $warning: (
+      'default': #ffa012,
+      'ink': #000
+    ),
+    $success: (
+      'default': #1ea33c,
+      'ink': #fff
+    ),
+    $radius: (
+      'small': 0.3rem,
+      'medium': 0.5rem,
+      'large': 0.7rem
+    ),
+    $global: (
+      'family': ('Outfit', sans-serif),
+      'weight': 300,
+    ),
+    $title: (
+      'family': ('Saira', monospace),
+      'weight': 700
+    ),
+    $subtitle: (
+      'family': ('Outfit', sans-serif),
+      'weight': 700,
+    ),
+    $code: (
+      'family': ('Fira Code', monospace),
+      'weight': 400
+    ),
+    $discord: (
+      'font-primary': (Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif),
+      'font-display': (Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif),
+      'font-code': (
+        Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+        "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace),
+      'font-headline': (Ginto Nord, Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif)
+    )
+  );
+  --ifm-color-primary: #FB6855;
+  --ifm-color-primary-dark: #3949f0;
+  --ifm-color-primary-darker: #2a3bee;
+  --ifm-color-primary-darkest: #1121d6;
+  --ifm-color-primary-light: #7781f4;
+  --ifm-color-primary-lighter: #868ff6;
+  --ifm-color-primary-lightest: #b4baf9;
+}
+
+html {
+  font-family: sentro.token-get('global-family');
+  font-weight: sentro.token-get('global-weight');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  box-sizing: inherit;
+  
+  font-family: inherit;
+  font-weight: inherit;
+  
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    box-sizing: inherit;
+  }
+}
+
+premium {
+  color:#FFB229;
+  text-shadow: 2px 2px 10px #FFB229;
+  background-color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: sentro.token-get('title-family');
+  font-weight: sentro.token-get('title-weight');
+}
+
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: sentro.token-get('subtitle-family');
+  font-weight: sentro.token-get('subtitle-weight');
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+  color: sentro.token-get('blurple');
+  
+  &:hover {
+    text-decoration: none;
+    color: sentro.token-get('blurple-light');
+  }
+}
+
+code,
+code * {
+  margin: 0;
+  font-family: sentro.token-get('code-family');
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  background-color: sentro.token-get('surface-dark');
+  box-sizing: border-box;
+}
+
+body {
+  background-color: sentro.token-get('surface-dark');
+  color: sentro.token-get('surface-ink');
+}
+
+#__next {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.content-wrap {
+  width: calc(100% - 30px);
+  max-width: 1077px;
+  margin: 0 auto;
+  padding: #{sentro.px-to-rem(81px)} 0 1.5rem 0;
+  
+  &--home-page {
+    width: calc(100% - 30px);
+    max-width: 1077px;
+    margin: 0 auto;
+    padding: 2rem 0 1.5rem 0;
+  }
+}
+
+mention {
+  background: #FB6855;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  &:hover {
+    background:#ff4b34;
+    color: #FB6855;
+  }
+}
+
+hr {
+  height: 1.20px;
+  background-color: #b13b2b;
+}
+
+.image {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 5px;
+}
+
+.avatar__name {
+  color: #FB6855;
+}
+
+.user_box {
+  display: inline-flex;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  grid-area: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  .name {
+    font-family: ('Saira', monospace);
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+
+  }
+  .comment {
+    font-family: Whitney;
+    padding-left: 0.35rem;
+    font-size: 0.80rem;
+    padding-top: 0.6rem;
+    font-weight: 100;
+    &::before {
+      content: '('
+    }
+    &::after {
+      content: ')'
+    }
+  }
+}
+
+.profile-picture-avatar {
+  float: left;
+  border-radius: 50%;
+  padding-top: 0.25rem;
+  width: 2rem;
+}
+
+.box {
+  display: inline-block;
+  font-family: Whitney;
+  border: 1.75px solid rgba(0, 0, 0, 0.527);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+  background-color: rgba(41,43,47,255);
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  .title {
+    font-family: ('Saira', monospace);
+    font-size: 1.20rem;
+  }
+}
+
+.roadmap-completed {
+  display: inline-block;
+  font-family: Whitney;
+  color: white;
+  padding: 1rem;
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: rgba(88, 101, 242, 0.7);
+  .title {
+    color: white;
+    font-family: ('Saira', monospace);
+    font-size: 1.40rem;
+  }
+}
+
+.roadmap-planned {
+  display: inline-block;
+  font-family: Whitney;
+  color: white;
+  padding: 1rem;
+  background: linear-gradient(to left, #3498db 5%, #0ED2F7 100%);
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  .title {
+    color: white;
+    font-family: ('Saira', monospace);
+    font-size: 1.40rem;
+  }
+}
+
+.roadmap-coming-soon {
+  display: inline-block;
+  font-family: Whitney;
+  color: white;
+  padding: 1rem;
+  background: linear-gradient(to right, #1F1C2C 10%, #928DAB 90%);
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  .title {
+    color: white;
+    font-family: ('Saira', monospace);
+    font-size: 1.40rem;
+  }
+}
+
+.update-new-features {
+  display: inline-block;
+  font-family: Whitney;
+  color: white;
+  padding: 1rem;
+  background: linear-gradient(107deg, rgb(13, 198, 180) 8.1%, rgb(33, 198, 138) 79.5%);
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  box-shadow: black 0px 14px 28px, rgba(0, 0, 0, 0.384) 0px 10px 10px;
+  .title {
+    color: white;
+    font-family: ('Saira', monospace);
+    font-size: 1.40rem;
+    text-shadow: 2px 2px 8px black;
+  }
+}
+
+.update-bug-fixes {
+  display: inline-block;
+  font-family: Whitney;
+  color: white;
+  padding: 1rem;
+  background: linear-gradient(179.1deg, rgb(43, 170, 96) 2.3%, rgb(57, 179, 16) 98.3%);
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  box-shadow: black 0px 14px 28px, rgba(0, 0, 0, 0.384) 0px 10px 10px;
+  .title {
+    color: white;
+    font-family: ('Saira', monospace);
+    font-size: 1.40rem;
+    text-shadow: 2px 2px 8px black;
+  }
+}
+
+.checkmark {
+  width: 30px;
+  height: 30px;
+  stroke-width: 3;
+  stroke: green;
+  margin-left: -15px;
+}
+
+.timestamp {
+  background: #42464d;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 3px;
+}
+
+div[class^=announcementBar_] {
+  border: 1.75px solid rgba(0, 0, 0, 0.527);
+  background-color: #292b2f;
+  color: whitesmoke;
+  button {
+    color:#5865f2;
+    opacity: 100;
+    border-radius: 3px;
+    border: 1.70px solid rgba(0, 0, 0, 0.527);
+  }
+}
+
+.mention {
+  background: #414675;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  &:hover {
+    background:#5865f2;
+  }
+}
+
+.discord-link {
+  color: #1c97da;
+  text-shadow: none;
+  &:hover {
+    color: #5865f2;
+  }
+}
+
+danger {
+  background: #d93333;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  &:hover {
+    background: #e74c3c;
+  }
+}
+
+.features {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  
+  .feature {
+    margin: 0 0.7rem;
+    color: rgba(#b4b4b4, 80%);
+    cursor: pointer;
+    border-bottom: 3px solid rgba(0 0 0 / 0);
+    @include sentro.prefix(transition, all 0.1s ease);
+    
+    &.active {
+      color: #fff;
+      border-color: #fff;
+    }
+    
+    &:hover,
+    &:focus {
+      color: #fff
+    }
+  }
+}
+
+.call-to-action {
+  height: 25vh;
+  display: grid;
+  place-items: center;
+  margin: 2.3rem 0;
+  text-align: center;
+  
+  .call-to-action__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  
+  @include helpers.breakpoint('medium') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include helpers.breakpoint('large') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blurple-background {
+  background-color: #5865f2;
+  border-radius: 5px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: inline-block;
+  font-family: ('Saira', monospace);
+  font-size: inherit;
+  margin-right: 0.3rem;
+  transition: all 0.3s ease;
+  &:hover, &:focus {
+    background-color: sentro.token-get('blurple-light');
+    cursor: pointer;
+  }
+}
+
+.logo {
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+details.customdetails {
+  --docusaurus-details-decoration-color: #5865f2;
+  background-color: inherit;
+  border-color: #7781f4;
+}
+
+.emoji {
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 1.375em;
+  height: 1.375em;
+  vertical-align: bottom;
+}
+
+.emoji.jumboable {
+  height: 2.7em;
+  width: 2.7em;
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 300;
+  src: url(/static/fonts/whitney/whitney300.woff) format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 400;
+  src: url(/static/fonts/whitney/whitney400.woff) format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 500;
+  src: url(/static/fonts/whitney/whitney500.woff) format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 600;
+  src: url(/static/fonts/whitney/whitney600.woff) format('woff');
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 700;
+  src: url(/static/fonts/whitney/whitney700.woff) format('woff');
+}
+
+.discord-messages {
+  font-family: sentro.token-get('discord-font-primary') !important;
+  // TODO: Figure out why this is necessary, and remove it.
+  //       We Should be able to remove everything below here, but for some reason it doesn't work without it. Also, some
+  //       of it hasn't been added to the component package yet anyways so that needs to be done.
+  .discord-message {
+    .discord-author-info {
+      .discord-author-username {
+        letter-spacing: unset;
+        cursor: pointer;
+      }
+      &:not(.discord-interaction-author-info) .discord-author-username:hover {
+        text-decoration: underline;
+      }
+      .discord-author-bot-tag {
+        font-weight: 500;
+      }
+    }
+    .discord-interaction {
+      .discord-interaction-reply {
+        cursor: pointer;
+      }
+      .discord-interaction-command {
+        cursor: default;
+        .discord-interaction-command-name {
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+      .discord-interaction-context-menu {
+        .discord-interaction-command-name {
+          cursor: unset;
+        }
+        .discord-interaction-command-name:hover {
+          text-decoration: unset;
+          opacity: 0.65;
+        }
+      }
+    }
+    .discord-message-timestamp {
+      font-weight: 500;
+      cursor: default;
+    }
+    .discord-buttons .discord-button {
+      font-family: inherit;
+    }
+    font-weight: 400;
+  }
+}
+
+@font-face{font-family:Ginto;font-weight:300;src:url(/static/fonts/ginto/ginto300.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:400;src:url(/static/fonts/ginto/ginto400.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:500;src:url(/static/fonts/ginto/ginto500.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:600;src:url(/static/fonts/ginto/ginto600.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:700;src:url(/static/fonts/ginto/ginto700.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:300;font-style:italic;src:url(/static/fonts/ginto/ginto-italic300.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:400;font-style:italic;src:url(/static/fonts/ginto/ginto-italic400.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:500;font-style:italic;src:url(/static/fonts/ginto/ginto-italic500.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:600;font-style:italic;src:url(/static/fonts/ginto/ginto-italic600.woff) format("woff")}
+@font-face{font-family:Ginto;font-weight:700;font-style:italic;src:url(/static/fonts/ginto/ginto-italic700.woff) format("woff")}
+@font-face{font-family:Ginto Nord;font-weight:500;src:url(/static/fonts/ginto-nord/ginto-nord500.woff2) format("woff2"),url(/static/fonts/ginto-nord/ginto-nord500.woff) format("woff")}
+@font-face{font-family:Ginto Nord;font-weight:600;src:url(/static/fonts/ginto-nord/ginto-nord600.woff2) format("woff2"),url(/static/fonts/ginto-nord/ginto-nord600.woff) format("woff")}
+@font-face{font-family:Ginto Nord;font-weight:700;src:url(/static/fonts/ginto-nord/ginto-nord700.woff2) format("woff2"),url(/static/fonts/ginto-nord/ginto-nord700.woff) format("woff")}
+
+
+@include overrides.init();
+
+@include pyc-button.init();
+@include pyc-hero.init();
+@include pyc-icon.init();
+@include pyc-user-card.init();
+@include pyc-title-bar.init();
