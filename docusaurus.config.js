@@ -93,7 +93,7 @@ const config = {
           href: 'https://github.com/Danbot-Hosting/DBH-Bot-API',
           position: 'right',
           className: 'header-github-link',
-          'aria-label': 'GitHub',
+          'aria-label': 'GitHub repository',
          },
         ],
       },
