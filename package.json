@@ -18,7 +18,7 @@
     "@docusaurus/preset-classic": "3.1.1",
     "@pycord/discord-message-components-react": "^0.3.2",
     "@iconify/react": "^4.1.1",
-    "@matteusan/sentro": "0.1.23",
+    "@matteusan/sentro": "0.1.25",
     "@mdx-js/react": "^3.0.1",
     "clsx": "^2.0.0",
     "docusaurus-json-schema-plugin": "^1.11.0",
