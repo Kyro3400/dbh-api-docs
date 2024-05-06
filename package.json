@@ -21,7 +21,7 @@
     "@matteusan/sentro": "0.1.25",
     "@mdx-js/react": "^3.0.1",
     "clsx": "^2.0.0",
-    "docusaurus-json-schema-plugin": "^1.11.0",
+    "docusaurus-json-schema-plugin": "^1.12.0",
     "docusaurus-plugin-code-preview": "^0.0.1",
     "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.3.0",
