@@ -1985,10 +1985,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@iconify/react@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/@iconify/react/-/react-4.1.1.tgz"
-  integrity sha512-jed14EjvKjee8mc0eoscGxlg7mSQRkwQG3iX3cPBCO7UlOjz0DtlvTqxqEcHUJGh+z1VJ31Yhu5B9PxfO0zbdg==
+"@iconify/react@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@iconify/react/-/react-5.0.0.tgz"
+  integrity sha512-XVRShEb+tdbcz+9PICo1IRb3dLtXxlMKuZKt5K9seq0w9VstIYeUMWpk6HkIJkVQYC5v3JuHVyusxGFrzF4dBA==
   dependencies:
     "@iconify/types" "^2.0.0"
 
