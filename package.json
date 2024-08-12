@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "3.3.2",
+    "@docusaurus/core": "3.5.1",
     "@docusaurus/preset-classic": "3.3.2",
     "@pycord/discord-message-components-react": "^0.3.2",
     "@iconify/react": "^4.1.1",
